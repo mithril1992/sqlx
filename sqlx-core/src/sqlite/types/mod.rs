@@ -23,6 +23,15 @@
 //! | `chrono::DateTime<Utc>`               | DATETIME                                             |
 //! | `chrono::DateTime<Local>`             | DATETIME                                             |
 //!
+//! ### [`uuid`](https://crates.io/crates/uuid)
+//!
+//! Requires the `uuid` Cargo feature flag.
+//!
+//! | Rust type                             | MySQL type(s)                                        |
+//! |---------------------------------------|------------------------------------------------------|
+//! | `uuid::Uuid`                          | TEXT                                                 |
+//! | `uuid::adapter::Hyphenated`           | TEXT                                                 |
+//!
 //! # Nullable
 //!
 //! In addition, `Option<T>` is supported where `T` implements `Type`. An `Option<T>` represents
@@ -36,3 +45,5 @@ mod chrono;
 mod float;
 mod int;
 mod str;
+#[cfg(feature = "uuid")]
+mod uuid;
